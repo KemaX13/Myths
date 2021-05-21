@@ -1,6 +1,6 @@
 import BootScene from "../BootScene.js";
 
-export default class player extends Phaser.GameObjects.Sprite{
+export default class Player extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, texture, frame){
     super(scene, x, y, texture, frame);
     this.scene.physics.world.enable(this);
@@ -34,6 +34,91 @@ export default class player extends Phaser.GameObjects.Sprite{
             KeyD: D,
             Sprint: SHIFT,
         })
+
+        this.anims.create({
+    			key: 'idler',
+    			frames: this.anims.generateFrameNumbers(this, { start: 0, end: 2 }),
+    			frameRate: 5,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'idlel',
+    			frames: this.anims.generateFrameNumbers(this, { start: 13, end: 15 }),
+    			frameRate: 5,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'right',
+    			frames: this.anims.generateFrameNumbers(this, { start: 0, end: 12 }),
+    			frameRate: 15,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'rright',
+    			frames: this.anims.generateFrameNumbers(this, { start: 0, end: 12 }),
+    			frameRate: 25,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'left',
+    			frames: this.anims.generateFrameNumbers(this, { start: 13, end: 25 }),
+    			frameRate: 15,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'rleft',
+    			frames: this.anims.generateFrameNumbers(this, { start: 13, end: 25 }),
+    			frameRate: 25,
+    			repeat: -1
+    		});
+    		this.anims.create({
+    			key: 'atqr',
+    			frames: this.anims.generateFrameNumbers(this, { start: 26, end: 30 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'atql',
+    			frames: this.anims.generateFrameNumbers(this, { start: 31, end: 35 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'down',
+    			frames: this.anims.generateFrameNumbers(this, { start: 36, end: 50 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'rdown',
+    			frames: this.anims.generateFrameNumbers(this, { start: 36, end: 50 }),
+    			frameRate: 25,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'up',
+    			frames: this.anims.generateFrameNumbers(this, { start: 51, end: 66 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'rup',
+    			frames: this.anims.generateFrameNumbers(this, { start: 51, end: 66 }),
+    			frameRate: 25,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'atqu',
+    			frames: this.anims.generateFrameNumbers(this, { start: 67, end: 71 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
+    		this.anims.create({
+    			key: 'atqd',
+    			frames: this.anims.generateFrameNumbers(this, { start: 72, end: 76 }),
+    			frameRate: 15,
+    			repeat: 1
+    		});
   }
 
   update()

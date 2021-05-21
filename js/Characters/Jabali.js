@@ -1,4 +1,4 @@
-export default class jabali extends Phaser.GameObjects.Sprite{
+export default class Jabali extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, texture, frame){
     super(scene, x, y, texture, frame);
     this.scene.physics.world.enable(this);

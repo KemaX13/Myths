@@ -7,7 +7,7 @@ export default class BootScene extends Phaser.Scene {
 	{
 		this.load.image("fuego","assets/images/exp.png");
 		this.load.atlas("object_sprites", "assets/images/objectssheet.png", "assets/images/objectssheet_atlas.json");
-		this.load.image("ojo","assets/images/eye.png");
+		this.load.image("ojo", "assets/images/eyefrontsheet.png", "assets/images/eyefrontsheet_atlas.json");
 		this.load.image("disparo","assets/images/Shoot.png");
 		this.load.spritesheet('avatar', 'assets/images/avatar.png', { frameWidth: 32, frameHeight: 32 });
 		this.load.tilemapTiledJSON('LastRoom', 'assets/TileMaps/LastRoom.json');
@@ -24,24 +24,24 @@ export default class BootScene extends Phaser.Scene {
 		this.layer2.setCollisionByProperty({ collides: true });
 
 		//Creación de personaje con sus mecanicas
-		this.fire = new fire(this, 0, 0, 'fuego');
-		this.player = new player(this, 400, 200, 'avatar', 'sprite_01');
+		this.fire = new Fire(this, 0, 0, 'fuego');
+		this.player = new Player(this, 400, 200, 'avatar', 'sprite_01');
 		this.bomb = new bomb(this, 0, 0, 'object_sprites', 'bomb');
 
 		//Creación de enemigos
 
 		//Creación de jabalí
-		this.jabali = new jabali(this, 500, 100, 'ojo');
+		this.jabali = new Jabali(this, 500, 100, 'ojo');
 
 		//Creación de ojo y su disparo
-		this.ojo = new eye(this, 400, 400, 'ojo');
-		this.disparo = new shoot(this, this.ojo.x, this.ojo.y, 'disparo');
+		this.ojo = new Eye(this, 400, 400, 'ojo');
+		this.disparo = new Shoot(this, this.ojo.x, this.ojo.y, 'disparo');
 
 		//Creación de Inventario
-		this.pocionYellow = new inventario(this, this.game.config.width, 0, 'object_sprites', 'pocionyellow');
-		this.pocionBlue = new inventario(this, this.pocionYellow.x - 50, 0, 'object_sprites', 'pocionblue');
-		this.pocionGreen = new inventario(this, this.pocionBlue.x - 50, 0, 'object_sprites', 'pociongreen');
-		this.pocionRed = new inventario(this, this.pocionGreen.x - 50, 0, 'object_sprites', 'pocionred');
+		this.pocionYellow = new Inventario(this, this.game.config.width, 0, 'object_sprites', 'pocionyellow');
+		this.pocionBlue = new Inventario(this, this.pocionYellow.x - 50, 0, 'object_sprites', 'pocionblue');
+		this.pocionGreen = new Inventario(this, this.pocionBlue.x - 50, 0, 'object_sprites', 'pociongreen');
+		this.pocionRed = new Inventario(this, this.pocionGreen.x - 50, 0, 'object_sprites', 'pocionred');
 
 		//Eventos o configuraciones utiles
 		this.Teclas.call(this);
@@ -232,10 +232,10 @@ export default class BootScene extends Phaser.Scene {
 	}
 }
 
-import player from "./Characters/player.js";
-import jabali from "./Characters/jabali.js";
-import eye from "./Characters/eye.js";
-import shoot from "./GameObjects/shoot.js";
+import Player from "./Characters/Player.js";
+import Jabali from "./Characters/Jabali.js";
+import Eye from "./Characters/Eye.js";
+import Shoot from "./GameObjects/Shoot.js";
 import bomb from "./GameObjects/bomb.js";
-import fire from "./GameObjects/fire.js";
-import inventario from "./GameObjects/inventario.js";
+import Fire from "./GameObjects/Fire.js";
+import Inventario from "./GameObjects/Inventario.js";
