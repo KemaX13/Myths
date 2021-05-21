@@ -1,4 +1,4 @@
-export default class Eye extends Phaser.GameObjects.Sprite{
+export default class eye extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, texture, frame){
     super(scene, x, y, texture, frame);
     this.scene.physics.world.enable(this);
