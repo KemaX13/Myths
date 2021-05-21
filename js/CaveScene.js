@@ -10,10 +10,5 @@ export default class CaveScene extends BootScene {
 	update()
 	{
 		this.player.update();
-		this.bomb.update();
-		this.jabali.update();
-		this.ojo.update();
-		this.disparo.update();
-		this.InventarioChange();
 	}
 }
