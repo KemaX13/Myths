@@ -17,7 +17,7 @@ var config = {
           }
     },
     fps: {
-	target: 60,
+	target: 15,
 	forceSetTimeOut: true
 	},
 }
