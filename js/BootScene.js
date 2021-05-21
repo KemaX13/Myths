@@ -232,10 +232,10 @@ export default class BootScene extends Phaser.Scene {
 	}
 }
 
-import Player from "./Characters/Player.js";
-import Jabali from "./Characters/Jabali.js";
-import Eye from "./Characters/eye.js";
-import Shoot from "./GameObjects/Shoot.js";
-import Bomb from "./GameObjects/Bomb.js";
-import Fire from "./GameObjects/Fire.js";
-import Inventario from "./GameObjects/Inventario.js";
+import player from "./Characters/player.js";
+import jabali from "./Characters/jabali.js";
+import eye from "./Characters/eye.js";
+import shoot from "./GameObjects/shoot.js";
+import bomb from "./GameObjects/bomb.js";
+import fire from "./GameObjects/fire.js";
+import inventario from "./GameObjects/inventario.js";

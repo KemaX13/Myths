@@ -1,4 +1,4 @@
-export default class Inventario extends Phaser.GameObjects.Sprite{
+export default class inventario extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, textureKey, key){
     super(scene, x, y, textureKey, key);
 		this.scene.add.existing(this);
