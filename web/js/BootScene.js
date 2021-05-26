@@ -28,7 +28,7 @@ export default class BootScene extends Phaser.Scene {
 		//Creación de personaje con sus mecanicas
 		this.fire = new Fire(this, 0, 0, 'fuego');
 		this.player = new Player(this, 400, 200, 'avatar', 'sprite_0.png');
-		this.bomb = new Bomb(this, 0, 0, 'objectsprites', 'objects_5.png');
+		this.bomb = new Bomba(this, 0, 0, 'objectsprites', 'objects_5.png');
 
 		//Creación de enemigos
 		//Creación de jabalí
@@ -45,9 +45,8 @@ export default class BootScene extends Phaser.Scene {
 		this.physics.add.collider(this.player, this.layer2);
 		this.physics.world.createDebugGraphic();
 		this.music = this.sound.add('music');
-		this.cameras.main.setBounds(0, 0, 800 * 2, 600);
+		this.cameras.main.setBounds(0, 0, 800 * 2, 600 * 2);
 		this.physics.world.setBounds(0, 0, 800 * 2, 600);
-		//this.player.setCollideWorldBounds(true);
 	}
 
 	update()
@@ -162,8 +161,8 @@ export default class BootScene extends Phaser.Scene {
 
 import Player from "./Characters/Player.js";
 import Jabali from "./Characters/Jabali.js";
-import Eye from "./Characters/eye.js";
+import Eye from "./Characters/Eye.js";
 import Shoot from "./GameObjects/Shoot.js";
-import Bomb from "./GameObjects/Bomb.js";
+import Bomba from "./GameObjects/Bomba.js";
 import Fire from "./GameObjects/Fire.js";
 import Inventario from "./GameObjects/Inventario.js";

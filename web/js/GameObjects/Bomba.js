@@ -1,11 +1,10 @@
-export default class Bomb extends Phaser.GameObjects.Sprite{
+export default class Bomba extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, textureKey, key){
     super(scene, x, y, textureKey, key);
 		this.scene.physics.world.enable(this);
 		this.scene.add.existing(this);
 
 			this.setOrigin(0.5, 0.5);
-			//this.setScale(0.25, 0.25);
 			this.visible = false;
 
 			this.cooldown = 5;
@@ -20,12 +19,11 @@ export default class Bomb extends Phaser.GameObjects.Sprite{
 			key: 'alerta',
 			frames: this.anims.generateFrameNames('objectsprites', { start: 5, end: 6, prefix: 'objects_', suffix: '.png'}),
 			frameRate: 5,
-			repeat: -1
-		});
+			repeat: -1});
 
       const { SPACE } = Phaser.Input.Keyboard.KeyCodes;
         this.keys = this.scene.input.keyboard.addKeys({ BombT: SPACE });
-		}
+    }
 
 		update()
 		{
