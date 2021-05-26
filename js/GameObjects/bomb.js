@@ -1,4 +1,4 @@
-export default class Bomb extends Phaser.GameObjects.Sprite{
+export default class bomb extends Phaser.GameObjects.Sprite{
   constructor(scene, x, y, textureKey, key){
     super(scene, x, y, textureKey, key);
 		this.scene.physics.world.enable(this);

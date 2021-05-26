@@ -7,7 +7,7 @@ export default class BootScene extends Phaser.Scene {
 	{
 		this.load.image("fuego","assets/images/exp.png");
 		this.load.atlas("object_sprites", "assets/images/objectssheet.png", "assets/images/objectssheet_atlas.json");
-		this.load.image("ojo","assets/images/eye.png");
+		this.load.image("ojo", "assets/images/eyefrontsheet.png", "assets/images/eyefrontsheet_atlas.json");
 		this.load.image("disparo","assets/images/Shoot.png");
 		this.load.spritesheet('avatar', 'assets/images/avatar.png', { frameWidth: 32, frameHeight: 32 });
 		this.load.tilemapTiledJSON('LastRoom', 'assets/TileMaps/LastRoom.json');
@@ -26,7 +26,7 @@ export default class BootScene extends Phaser.Scene {
 		//Creación de personaje con sus mecanicas
 		this.fire = new Fire(this, 0, 0, 'fuego');
 		this.player = new Player(this, 400, 200, 'avatar', 'sprite_01');
-		this.bomb = new Bomb(this, 0, 0, 'object_sprites', 'bomb');
+		this.bomb = new bomb(this, 0, 0, 'object_sprites', 'bomb');
 
 		//Creación de enemigos
 
@@ -236,6 +236,6 @@ import Player from "./Characters/Player.js";
 import Jabali from "./Characters/Jabali.js";
 import Eye from "./Characters/Eye.js";
 import Shoot from "./GameObjects/Shoot.js";
-import Bomb from "./GameObjects/Bomb.js";
+import bomb from "./GameObjects/bomb.js";
 import Fire from "./GameObjects/Fire.js";
 import Inventario from "./GameObjects/Inventario.js";
